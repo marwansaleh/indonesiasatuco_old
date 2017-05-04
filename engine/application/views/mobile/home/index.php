@@ -61,7 +61,7 @@
                             }
                             s+= '<div class="media-left">';
                                 s+= '<a href="'+data[i].link_href+'">';
-                                    s+= '<img class="media-object" src="'+data[i].image_url.square+'" alt="'+data[i].title+'">' ;
+                                    s+= '<img class="media-object" src="'+(data[i].image_url.square ? data[i].image_url.square:data[i].image_url.small)+'" alt="'+data[i].title+'">' ;
                                 s+= '</a>';
                             s+= '</div>';
                         }
