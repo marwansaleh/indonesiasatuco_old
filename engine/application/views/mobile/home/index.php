@@ -48,9 +48,10 @@
                 if (data.length > 0){
                     for (var i in data){
                         var s = '<li data-id="'+data[i].id+'" class="media '+(_this.page==1&&i==0?'first-item':'')+'" data-href="'+data[i].link_href+'">';
+                        
                         if (_this.page==1 &&i==0){
                             s+= '<a href="'+data[i].link_href+'">';
-                                s+= '<img class="media-object img-responsive" src="'+data[i].image_url.large+'" alt="'+data[i].title+'">' ;
+                                s+= '<img class="media-object img-responsive" src="'+(data[i].image_url ? data[i].image_url.large:'')+'" alt="'+data[i].title+'">' ;
                             s+= '</a>';
                         }else{
                             if (_this.isAdvert && !adv_showed){
@@ -61,7 +62,7 @@
                             }
                             s+= '<div class="media-left">';
                                 s+= '<a href="'+data[i].link_href+'">';
-                                    s+= '<img class="media-object" src="'+(data[i].image_url.square ? data[i].image_url.square:data[i].image_url.small)+'" alt="'+data[i].title+'">' ;
+                                    s+= '<img class="media-object" src="'+(data[i].image_url ? data[i].image_url.square:'')+'" alt="'+data[i].title+'">' ;
                                 s+= '</a>';
                             s+= '</div>';
                         }
