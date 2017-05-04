@@ -14,7 +14,7 @@
 | path to your installation.
 |
 */
-$config['base_url']	= 'http://www.indonesiasatu.co/';
+$config['base_url']	= '';
 
 /*
 |--------------------------------------------------------------------------
