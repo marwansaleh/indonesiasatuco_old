@@ -28,7 +28,7 @@ class MY_BaseController extends CI_Controller {
     
     private function __initialisation(){
         //Create unique id for unique visitor
-        $this->_create_unique_visitor();
+        //$this->_create_unique_visitor();
         
         $this->_log_file = config_item('log_filename') ? config_item('log_filename') : 'mylogfile.log';
         $this->_log_path = rtrim(sys_get_temp_dir(), '/') .'/';
