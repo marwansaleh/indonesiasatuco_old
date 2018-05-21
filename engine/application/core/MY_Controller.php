@@ -911,9 +911,9 @@ class MY_News extends MY_Controller {
             $this->article_m->increase_view($article_id);
             
             if (!$view_list) {
-                $this->session->set_userdata('view_list_articles', [$article_id]);
+                $this->session->set_userdata('view_list_articles', array($article_id));
             } else {
-                $view_list [] = $article_id;
+                $view_list[] = $article_id;
                 $this->session->set_userdata('view_list_articles', $view_list);
             }
         }
