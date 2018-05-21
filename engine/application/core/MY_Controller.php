@@ -905,12 +905,24 @@ class MY_News extends MY_Controller {
     
     protected function _article_view_counter($article_id){
         //check if this visitor already view counted
-        $this->load->model('article/article_visit_m','visit_m');
-        $visitor_id = $this->_get_unique_visitor();
-        if ($this->visit_m->get_count(array('article_id'=>$article_id, 'visitor_id'=>$visitor_id))==0){
-            $this->visit_m->save(array('date'=>time(),'article_id'=>$article_id,'visitor_id'=>$visitor_id));
+        $view_list = $this->session->userdata('view_list_articles');
+        if (!$view_list || !in_array($article_id, $view_list)) {
+            //berarti belum pernah liat. increase view
             $this->article_m->increase_view($article_id);
+            
+            if (!$view_list) {
+                $this->session->set_userdata('view_list_articles', [$article_id]);
+            } else {
+                $view_list [] = $article_id;
+                $this->session->set_userdata('view_list_articles', $view_list);
+            }
         }
+//        $this->load->model('article/article_visit_m','visit_m');
+//        $visitor_id = $this->_get_unique_visitor();
+//        if ($this->visit_m->get_count(array('article_id'=>$article_id, 'visitor_id'=>$visitor_id))==0){
+//            $this->visit_m->save(array('date'=>time(),'article_id'=>$article_id,'visitor_id'=>$visitor_id));
+//            $this->article_m->increase_view($article_id);
+//        }
     }
     
     protected function _mobile_news($num=10, $condition=NULL){
