@@ -27,7 +27,7 @@ class Dashboard extends MY_AdminController {
         
         //get visitors
         $this->load->model('system/visitor_m');
-        $this->data['visitor_count'] = $this->visitor_m->get_count();
+        $this->data['visitor_count'] = $this->_visitor_count();
         
         //get comment
         $this->load->model('article/comment_m');
