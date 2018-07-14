@@ -28,7 +28,7 @@ class MY_BaseController extends CI_Controller {
     
     private function __initialisation(){
         //Create unique id for unique visitor
-        //$this->_create_unique_visitor();
+        $this->_create_unique_visitor();
         
         $this->_log_file = config_item('log_filename') ? config_item('log_filename') : 'mylogfile.log';
         $this->_log_path = rtrim(sys_get_temp_dir(), '/') .'/';
@@ -38,8 +38,21 @@ class MY_BaseController extends CI_Controller {
      * Create unique visitor cookie
      */
     protected function _create_unique_visitor(){
+        if (!isset($this->sysvar_m)) {
+            $this->load->model('system/sys_variables_m','sysvar_m');
+        }
         //check if cookie for this visitor exists, if not create one
-        
+        if (!$this->agent->is_robot()){
+            if (!$this->session->userdata('visitor_count')) {
+                $this->db->where('var_name', 'VISITOR_COUNT');
+                $this->db->set('var_value', '`var_value`+ 1', FALSE);
+                $this->db->update($this->sysvar_m->get_tablename());
+
+                $this->session->set_userdata('visitor_count',TRUE);
+            }
+        }
+        //check if already counted as visitor
+        /*
         if (!get_cookie($this->_cookie_visitor)){
             $cookie = array(
                 'name'   => $this->_cookie_visitor,
@@ -53,6 +66,15 @@ class MY_BaseController extends CI_Controller {
                 $this->_visitor_register();
             }
         }
+         */
+    }
+    
+    protected function _visitor_count(){
+        if (!isset($this->sysvar_m)) {
+            $this->load->model('system/sys_variables_m','sysvar_m');
+        }
+        $visitor = $this->sysvar_m->get_value('var_value', array('var_name' => 'VISITOR_COUNT'));
+        return $visitor;
     }
     
     /**
@@ -529,13 +551,6 @@ class MY_News extends MY_Controller {
         $this->data['FB_ID'] = $this->get_FB_ID();
         $this->data['GA_Code'] = $this->get_GA_Code();
         $this->data['adverts'] = NULL;
-    }
-    
-    private function _visitor_count(){
-        if (!isset($this->visitor_m)){
-            $this->load->model('system/visitor_m');
-        }
-        return $this->visitor_m->get_count();
     }
     
     private function _mobile_bottom_menus(){
