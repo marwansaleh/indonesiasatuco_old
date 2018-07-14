@@ -84,5 +84,6 @@ define('ADV_TYPE_MOBILE_TOP',6);
 define('ADV_TYPE_MOBILE_BODY',7);
 define('ADV_TYPE_MOBILE_BOTTOM',8);
 define('ADV_TYPE_MOBILE_ARTICLE',9);
+define('ADV_TYPE_HOME_BOTTOM', 10);
 /* End of file constants.php */
 /* Location: ./application/config/constants.php */
