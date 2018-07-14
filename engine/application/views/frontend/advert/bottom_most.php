@@ -17,7 +17,7 @@
     </div>
     
 </div>
-<?php endif; ?>
+
 
 <?php if (count($adverts[ADV_TYPE_BOTTOM_MOST])>1): ?>
 <script type="text/javascript">
@@ -32,4 +32,6 @@
         });
     });
 </script>
-<?php endif; 
+<?php 
+endif; 
+endif;
