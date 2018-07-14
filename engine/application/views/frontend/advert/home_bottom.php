@@ -2,7 +2,7 @@
 
 <?php if (count($adverts[ADV_TYPE_BOTTOM_LEFT])>1): ?>
 <div class="row" style="margin-top:5px;">
-    <div class="col-sm-12  <?php echo count($adverts[ADV_TYPE_BOTTOM_LEFT])>1?'flexslider':''; ?>" style="margin-bottom:5px;" id="advert-botom-left-desktop">
+    <div class="col-sm-12  <?php echo count($adverts[ADV_TYPE_BOTTOM_LEFT])>1?'flexslider':''; ?>" style="margin-bottom:5px;" id="advert-home-bottom-desktop">
         <ul class="slides">
             <?php foreach ($adverts[ADV_TYPE_BOTTOM_LEFT] as $adv): ?>
             <li>
@@ -21,7 +21,7 @@
 </div>
 <script type="text/javascript">
     $(document).ready(function (){
-        $('#advert-botom-left-desktop').flexslider({
+        $('#advert-home-bottom-desktop').flexslider({
             animation: "slide",
             slideshow: true,
             controlNav: false,
