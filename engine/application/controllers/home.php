@@ -115,34 +115,34 @@ class Home extends MY_News {
         
         //get refleksi
         $cat_refleksi = $this->category_m->get_by(array('slug'=>'refleksi'),TRUE);
-        $cat_refleksi->articles = $this->_article_categories($cat_refleksi->id, 6);
+        $cat_refleksi->articles = $this->_article_categories($cat_refleksi->id, isset($parameters['LAYOUT_HOME_LEFT_UNDER_NUM'])?$parameters['LAYOUT_HOME_LEFT_UNDER_NUM'] : 6);
         $this->data['category_refleksi'] = $cat_refleksi;
         
         //get gaya hidup
         $cat_gayahidup = $this->category_m->get_by(array('slug'=>'gaya-hidup'),TRUE);
         if ($cat_gayahidup){
-            $cat_gayahidup->articles = $this->_article_categories($cat_gayahidup->id, 6);
+            $cat_gayahidup->articles = $this->_article_categories($cat_gayahidup->id, isset($parameters['LAYOUT_HOME_LEFT_UNDER_NUM'])?$parameters['LAYOUT_HOME_LEFT_UNDER_NUM'] : 6);
             $this->data['category_gayahidup'] = $cat_gayahidup;
         }
         
         //get internasional
         $cat_internasional = $this->category_m->get_by(array('slug'=>'internasional'),TRUE);
         if ($cat_internasional){
-            $cat_internasional->articles = $this->_article_categories($cat_internasional->id, 5);
+            $cat_internasional->articles = $this->_article_categories($cat_internasional->id, isset($parameters['LAYOUT_HOME_LEFT_UNDER_NUM'])?$parameters['LAYOUT_HOME_LEFT_UNDER_NUM'] : 5);
             $this->data['category_internasional'] = $cat_internasional;
         }
         //get daerah
-        $cat_daerah = $this->category_m->get_by(array('slug'=>'daerah'),TRUE);
-        if ($cat_daerah){
-            $cat_daerah->articles = $this->_article_categories($cat_daerah->id, 4);
-            $this->data['category_daerah'] = $cat_daerah;
-        }
-        //get hiburan
-        $cat_hiburan = $this->category_m->get_by(array('slug'=>'hiburan'),TRUE);
-        if ($cat_hiburan){
-            $cat_hiburan->articles = $this->_article_categories($cat_hiburan->id, 4);
-            $this->data['category_hiburan'] = $cat_hiburan;
-        }
+//        $cat_daerah = $this->category_m->get_by(array('slug'=>'daerah'),TRUE);
+//        if ($cat_daerah){
+//            $cat_daerah->articles = $this->_article_categories($cat_daerah->id, 4);
+//            $this->data['category_daerah'] = $cat_daerah;
+//        }
+//        //get hiburan
+//        $cat_hiburan = $this->category_m->get_by(array('slug'=>'hiburan'),TRUE);
+//        if ($cat_hiburan){
+//            $cat_hiburan->articles = $this->_article_categories($cat_hiburan->id, 4);
+//            $this->data['category_hiburan'] = $cat_hiburan;
+//        }
         //get olahraga
         $cat_olahraga = $this->category_m->get_by(array('slug'=>'olahraga'),TRUE);
         if ($cat_olahraga){
