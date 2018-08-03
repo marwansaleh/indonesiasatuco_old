@@ -14,8 +14,8 @@ endif; ?>
                             <p class="redaksi">
                                 Penasihat: Letjen TNI (Purn) Kiki Syahnakri<br>
                                 <!-- Pendiri: Valens Daki-Soo<br>-->
-                                Pendiri/Pemimpin Redaksi: Valens Daki-Soo<br>
-                                Redaktur Pelaksana: Simon Leya<br>
+                                Pendiri/Pemimpin Umum: Valens Daki-Soo<br>
+                                Pemimpin Redaksi: Simon Leya<br>
                                 Penerbit: Divisi Publishing PT VERITAS DHARMA SATYA<br>
                                 <!--Website: <a href="http://www.veritasdharmasatya.com" target="_blank" style="color: blue;">www.veritasdharmasatya.com</a><br>-->
                                 <!-- SIUP: 01290/24.1.0/31.71-01.1002/1.824.271/2015 -->
