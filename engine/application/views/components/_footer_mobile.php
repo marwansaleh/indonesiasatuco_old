@@ -66,8 +66,8 @@
         </div>
         <p class="redaksi" style="font-size: 10px; padding-top: 5px; padding-bottom: 5px; background-color: #424242;">
             Penasihat: Letjen TNI (Purn) Kiki Syahnakri<br>
-            Pendiri/Pemimpin Redaksi: Valens Daki-Soo<br>
-            Redaktur Pelaksana: Simon Leya
+            Pendiri/Pemimpin Umum: Valens Daki-Soo<br>
+            Pemimpin Redaksi: Simon Leya
         </p>
         <p class="redaksi" style="font-size: 8px;">
             Graha VDS Lantai 2, Jl. Tebet Raya No. 25 Tebet, Jakarta Selatan Telp:(021) 28542045, 28543705, Fax:(021) 26542232 
